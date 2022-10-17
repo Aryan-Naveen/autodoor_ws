@@ -127,7 +127,8 @@ void setup() {
   pinMode(BUTTON_PIN, INPUT_PULLUP);
 
   display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS);
-  display.display();
+  display.println("Hello");
+display.display();;
   display.clearDisplay();
   display.setFont(&FreeSans9pt7b);
 
@@ -167,149 +168,182 @@ void activate(){
 }
 
 void idle_screen(){
+  display.clearDisplay();
   display.drawBitmap(xx, yy,frame0_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame1_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame2_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame3_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame4_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame5_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame6_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame7_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame8_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame9_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame10_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame11_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame12_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame13_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame14_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame15_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame16_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame17_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame18_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame19_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame20_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame21_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame22_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame23_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame24_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame25_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame26_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame27_idle,48,48, 1);
-  display.display();
+  display.println("Hello");
+  display.display();;
   delay(tt);
 
   count += 1;
   if (count % 1024 == 0){
     display.clearDisplay();
-    display.display();
+    display.display();;
     delay(tt);
   }
 }
