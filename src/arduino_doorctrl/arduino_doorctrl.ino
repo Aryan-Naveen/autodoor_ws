@@ -166,15 +166,18 @@ void activate(){
   }
 }
 
-void idle_screen(){
-  String  phrase = "---Face ID---";
+void idle_screen_disp(unsigned char PROGMEM frame){
   display.clearDisplay();
-  display.drawBitmap(xx, yy,frame0_idle,48,48, 1);
+  display.drawBitmap(xx, yy,frame,48,48, 1);
   display.setCursor(15,60);
   display.println(phrase);
   display.display();
   delay(tt);
-  display_idle_screen(frame)
+}
+
+void idle_screen(){
+  String  phrase = "---Face ID---";
+  idle_screen_disp(frame0_idle);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame1_idle,48,48, 1);
