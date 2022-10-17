@@ -118,8 +118,6 @@ int count = 0;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
-
-
 void setup() {
   myservo.attach(9);  // attaches the servo on pin 9 to the servo object
   myservo.write(pos);
@@ -168,24 +166,14 @@ void activate(){
   }
 }
 
-void display_idle_screen(unsigned char PROGMEM frame){
+void idle_screen(){
   String  phrase = "---Face ID---";
   display.clearDisplay();
-  display.drawBitmap(xx, yy, frame,48,48, 1);
+  display.drawBitmap(xx, yy,frame0_idle,48,48, 1);
   display.setCursor(15,60);
   display.println(phrase);
   display.display();
   delay(tt);
-}
-
-void idle_screen(){
-  String  phrase = "---Face ID---";
-  // display.clearDisplay();
-  // display.drawBitmap(xx, yy,frame0_idle,48,48, 1);
-  // display.setCursor(15,60);
-  // display.println(phrase);
-  // display.display();
-  // delay(tt);
   display_idle_screen(frame)
 
   display.clearDisplay();
