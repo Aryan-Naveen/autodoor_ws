@@ -156,8 +156,8 @@ void loop() {
 
 void activate(){
   Serial.println(1);
-  delay(1000);
   Serial.flush();
+  // delay(1000);
   while(Serial.available() == 0){
     display_screen("-Processing-");
   }
