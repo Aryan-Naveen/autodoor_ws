@@ -12,6 +12,9 @@
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
+#include <Fonts/FreeSans9pt7b.h>
+#include <Fonts/FreeSans18pt7b.h>
+#include <Fonts/FreeSans12pt7b.h>
 
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 64 // OLED display height, in pixels
@@ -20,6 +23,13 @@
 #define SCREEN_ADDRESS 0x3D ///< See datasheet for Address; 0x3D for 128x64, 0x3C for 128x32
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
+
+// Display stuff
+int preEyeXPos=0;
+int eyeXPos=0;
+int preEyeYPos=0;
+int eyeYPos=0;
+int eyeDir = 0;
 
 Servo myservo;  // create servo object to control a servo
 // twelve servo objects can be created on most boards
@@ -43,21 +53,12 @@ void setup() {
   pinMode(BUTTON_PIN, INPUT_PULLUP);
 
   display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS);
-  display.clearDisplay();
-
-  display.setTextSize(2);
-  display.setTextColor(WHITE);
-  display.setCursor(0, 0);
-  display.println("Welcome");
-
-  display.setTextSize(2);
-  display.setTextColor(WHITE);
-  display.setCursor(0, 17);
-  display.println("This is");
-  display.println("a Splash");
-  display.println("Screen");
-
   display.display();
+  display.clearDisplay();
+  display.setFont(&FreeSans9pt7b);
+
+ display.setTextColor(WHITE);
+ display.setCursor(0,0);
 }
 
 void loop() {
