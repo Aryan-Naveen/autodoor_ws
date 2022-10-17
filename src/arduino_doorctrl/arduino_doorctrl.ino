@@ -167,7 +167,7 @@ void activate(){
 }
 
 void idle_screen(){
-  String  phrase = "Welcome to Gore 304."
+  String  phrase = "---Face ID---";
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame0_idle,48,48, 1);
   display.setCursor(15,60);
