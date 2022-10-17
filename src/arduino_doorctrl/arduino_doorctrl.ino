@@ -119,23 +119,6 @@ int count = 0;
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-/*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Loading screen animation ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*/
-
-
-/*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*/
 
 
 void setup() {
@@ -165,7 +148,7 @@ void loop() {
   if(lastState == HIGH && currentState == LOW){
      activate();
   } else {
-    idle_screen();
+    display_screen("---Face ID---");
   }
   lastState = currentState;
   delay(500);
@@ -176,229 +159,23 @@ void activate(){
   delay(1000);
   Serial.flush();
   while(Serial.available() == 0){
-    processing_screen();
+    display_screen("-Processing-");
   }
   valid_person = Serial.readString();
   Serial.flush();
-  if (valid_person == "1"){
+  if (valid_person != "-1"){
+     display_screen(valid_person);
      myservo.write(180);
      delay(5000);
      myservo.write(0);
   } else {
+    display_screen("Access Denied");
     myservo.write(0);
   }
 }
 
 
-void idle_screen(){
-  String  phrase = "---Face ID---";
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame0_idle ,48,48, 1);
-  display.setCursor(15,60);
-  display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame1_idle,48,48, 1);
-  display.setCursor(15,60);
-  display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame2_idle,48,48, 1);
-  display.setCursor(15,60);
-  display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame3_idle,48,48, 1);
-  display.setCursor(15,60);
-display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame4_idle,48,48, 1);
-  display.setCursor(15,60);
-display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame5_idle,48,48, 1);
-  display.setCursor(15,60);
-display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame6_idle,48,48, 1);
-  display.setCursor(15,60);
-display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame7_idle,48,48, 1);
-  display.setCursor(15,60);
-display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame8_idle,48,48, 1);
-  display.setCursor(15,60);
-display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame9_idle,48,48, 1);
-  display.setCursor(15,60);
-display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame10_idle,48,48, 1);
-  display.setCursor(15,60);
-display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame11_idle,48,48, 1);
-  display.setCursor(15,60);
-display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame12_idle,48,48, 1);
-  display.setCursor(15,60);
-display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame13_idle,48,48, 1);
-  display.setCursor(15,60);
-display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame14_idle,48,48, 1);
-  display.setCursor(15,60);
-display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame15_idle,48,48, 1);
-  display.setCursor(15,60);
-display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame16_idle,48,48, 1);
-  display.setCursor(15,60);
-display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame17_idle,48,48, 1);
-  display.setCursor(15,60);
-display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame18_idle,48,48, 1);
-  display.setCursor(15,60);
-display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame19_idle,48,48, 1);
-  display.setCursor(15,60);
-display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame20_idle,48,48, 1);
-  display.setCursor(15,60);
-display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame21_idle,48,48, 1);
-  display.setCursor(15,60);
-display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame22_idle,48,48, 1);
-  display.setCursor(15,60);
-display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame23_idle,48,48, 1);
-  display.setCursor(15,60);
-display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame24_idle,48,48, 1);
-  display.setCursor(15,60);
-display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame25_idle,48,48, 1);
-  display.setCursor(15,60);
-display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame26_idle,48,48, 1);
-  display.setCursor(15,60);
-display.println(phrase);
-  display.display();
-  delay(tt);
-
-  display.clearDisplay();
-  display.drawBitmap(xx, yy,frame27_idle,48,48, 1);
-  display.setCursor(15,60);
-display.println(phrase);
-  display.display();
-  delay(tt);
-
-  count += 1;
-  if (count % 1024 == 0){
-    display.clearDisplay();
-    display.display();
-    delay(1000);
-    count = 0;
-  }
-}
-
-void processing_screen(){
-  String  phrase = "-Processing-";
+void display_screen(String phrase){
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame0_idle ,48,48, 1);
   display.setCursor(15,60);

@@ -43,7 +43,7 @@ class Validator():
 
         # Convert the image from BGR color (which OpenCV uses) to RGB color (which face_recognition uses)
         rgb_small_frame = small_frame[:, :, ::-1]
-        
+
         # Find all the faces and face encodings in the current frame of video
         self.face_locations = face_recognition.face_locations(rgb_small_frame, number_of_times_to_upsample = 2)
         self.face_encodings = face_recognition.face_encodings(rgb_small_frame, self.face_locations)
@@ -71,7 +71,10 @@ class Validator():
         print(face_names)
         self.rawCapture.truncate()
         self.rawCapture.seek(0)
-        return True
+        if len(face_names) > 0 and face_names[0] in self.known_face_names:
+            return face_names[0]
+        else:
+            return "-1"
 
 if __name__ == '__main__':
     validate = Validator()
@@ -86,8 +89,7 @@ if __name__ == '__main__':
                     arduino.flushInput()
                     print("Activated")
                     output = validate.validate_person()
-                    print(str(int(output)))
-                    arduino.write(str(int(output)).encode())
+                    arduino.write(output.encode())
 
             except KeyboardInterrupt:
                 print("KeyboardInterrupt has been caught.")
