@@ -302,4 +302,6 @@ void idle_screen(){
   display.drawBitmap(xx, yy,frame27_idle,48,48, 1);
   display.display();
   delay(tt);
+
+  display.clearDisplay();
 }
