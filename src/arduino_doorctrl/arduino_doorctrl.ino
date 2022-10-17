@@ -167,6 +167,7 @@ void activate(){
 }
 
 void idle_screen_disp(unsigned char PROGMEM frame){
+  String  phrase = "---Face ID---";
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame,48,48, 1);
   display.setCursor(15,60);
