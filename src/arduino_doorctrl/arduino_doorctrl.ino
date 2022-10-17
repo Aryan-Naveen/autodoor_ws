@@ -42,7 +42,7 @@ void setup() {
   Serial.flush();
   pinMode(BUTTON_PIN, INPUT_PULLUP);
 
-  display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR);
+  display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS);
   display.clearDisplay();
 
   display.setTextSize(2);
