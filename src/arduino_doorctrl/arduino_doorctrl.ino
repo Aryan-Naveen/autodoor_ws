@@ -167,199 +167,200 @@ void activate(){
 }
 
 void idle_screen(){
+  String  phrase = "Welcome to Gore 304."
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame0_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame1_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame2_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame3_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame4_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame5_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame6_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame7_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame8_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame9_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame10_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame11_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame12_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame13_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame14_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame15_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame16_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame17_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame18_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame19_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame20_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame21_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame22_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame23_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame24_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame25_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame26_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame27_idle,48,48, 1);
   display.setCursor(15,60);
-display.println("Hello");
+display.println(phrase);
   display.display();
   delay(tt);
 
