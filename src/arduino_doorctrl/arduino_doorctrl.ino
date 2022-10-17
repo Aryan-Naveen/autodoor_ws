@@ -454,6 +454,7 @@ display.println(phrase);
 }
 
 void processing_screen(){
+/*
   String  phrase = "-Processing-";
   display.clearDisplay();
   display.drawBitmap(xx, yy,frame0 ,48,48, 1);
@@ -650,5 +651,5 @@ display.println(phrase);
 display.println(phrase);
   display.display();
   delay(tt);
-
+*/
 }
