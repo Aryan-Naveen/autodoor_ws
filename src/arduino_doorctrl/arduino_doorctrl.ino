@@ -249,7 +249,7 @@ void activate(){
 void idle_screen(){
   String  phrase = "---Face ID---";
   display.clearDisplay();
-  display.drawBitmap(xx, yy,frame,48,48, 1);
+  display.drawBitmap(xx, yy,frame0_idle ,48,48, 1);
   display.setCursor(15,60);
   display.println(phrase);
   display.display();
@@ -456,7 +456,7 @@ display.println(phrase);
 void processing_screen(){
   String  phrase = "-Processing-";
   display.clearDisplay();
-  display.drawBitmap(xx, yy,frame,48,48, 1);
+  display.drawBitmap(xx, yy,frame0 ,48,48, 1);
   display.setCursor(15,60);
   display.println(phrase);
   display.display();
