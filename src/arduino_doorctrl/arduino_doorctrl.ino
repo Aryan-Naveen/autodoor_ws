@@ -8,6 +8,18 @@
 */
 
 #include <Servo.h>
+#include <SPI.h>
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+
+#define SCREEN_WIDTH 128 // OLED display width, in pixels
+#define SCREEN_HEIGHT 64 // OLED display height, in pixels
+
+#define OLED_RESET     3 // Reset pin # (or -1 if sharing Arduino reset pin)
+#define SCREEN_ADDRESS 0x3D ///< See datasheet for Address; 0x3D for 128x64, 0x3C for 128x32
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+
 
 Servo myservo;  // create servo object to control a servo
 // twelve servo objects can be created on most boards
@@ -29,6 +41,23 @@ void setup() {
   Serial.begin(9600);
   Serial.flush();
   pinMode(BUTTON_PIN, INPUT_PULLUP);
+
+  display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR);
+  display.clearDisplay();
+
+  display.setTextSize(2);
+  display.setTextColor(WHITE);
+  display.setCursor(0, 0);
+  display.println("Welcome");
+
+  display.setTextSize(2);
+  display.setTextColor(WHITE);
+  display.setCursor(0, 17);
+  display.println("This is");
+  display.println("a Splash");
+  display.println("Screen");
+
+  display.display();
 }
 
 void loop() {
