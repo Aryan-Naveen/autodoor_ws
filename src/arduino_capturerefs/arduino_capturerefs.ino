@@ -141,7 +141,7 @@ String total_images = "10";
 void loop() {
   Serial.flush();
   while(Serial.available() == 0){
-    display_screen("-Processing-");
+    display_screen("Not begun yet");
   }
   String num_images_captured = Serial.readString();
   Serial.flush();
