@@ -13,10 +13,12 @@ if __name__ == '__main__':
     num_valid = 0
     req_valid = 1
     camera = PiCamera()
-    rawCapture = PiRGBArray(self.camera)
+    rawCapture = PiRGBArray(camera)
+    time.sleep(0.1)
+    print("starting")
     while num_valid < req_valid:
-        camera.capture(self.rawCapture, format="bgr")
-        frame = cv2.rotate(self.rawCapture.array, cv2.ROTATE_180)
+        camera.capture(rawCapture, format="bgr")
+        frame = cv2.rotate(rawCapture.array, cv2.ROTATE_180)
         small_frame = cv2.resize(frame, (0, 0), fx=0.25, fy=0.25)
 
         # Convert the image from BGR color (which OpenCV uses) to RGB color (which face_recognition uses)
@@ -24,7 +26,7 @@ if __name__ == '__main__':
 
         # Find all the faces and face encodings in the current frame of video
         face_locations = face_recognition.face_locations(rgb_small_frame, number_of_times_to_upsample = 2)
-        face_encodings = face_recognition.face_encodings(rgb_small_frame, self.face_locations)
+        face_encodings = face_recognition.face_encodings(rgb_small_frame, face_locations)
         if len(face_encodings) > 0:
             print(face_encodings[0])
             req_valid += 1
