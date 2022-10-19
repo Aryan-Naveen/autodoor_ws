@@ -34,5 +34,5 @@ if __name__ == '__main__':
             print(req_valid)
         else:
             print('invalid')
-            self.rawCapture.truncate()
-            self.rawCapture.seek(0)
+        rawCapture.truncate()
+        rawCapture.seek(0)
