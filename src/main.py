@@ -85,9 +85,10 @@ if __name__ == '__main__':
             try:
                 while True:
                     while arduino.inWaiting() == 0: pass
-                    arduino.flushInput()
+                    arduino.flush()
                     print("Activated")
                     output = validate.validate_person()
+                    arduino.flush()
                     arduino.write(output.encode())
 
             except KeyboardInterrupt:
