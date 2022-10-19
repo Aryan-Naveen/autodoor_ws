@@ -139,6 +139,7 @@ int yy=0;
 int tt=0;
 String total_images = "10";
 String num_images_captured = "-1";
+boolean completed = false;
 void loop() {
   Serial.flush();
   while(Serial.available() == 0 && num_images_captured == "-1"){
@@ -147,7 +148,8 @@ void loop() {
   num_images_captured = Serial.readString();
   Serial.flush();
   display_screen("----" + num_images_captured + "/" + total_images + "----");
-  if (num_images_captured == total_images){
+  if (num_images_captured == total_images || completed){
+    completed = true;
     display_screen("---Completed---");
   }
 }

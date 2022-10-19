@@ -18,7 +18,7 @@ class ImageReferenceLoader():
         # Initialize some variables
         self.num_valid = 0
         self.num_req = 10
-        self.name = "Aryan"
+        self.name = "aryan"
 
 
     def capture_image(self):
@@ -35,7 +35,7 @@ class ImageReferenceLoader():
 
         if len(self.face_encodings) > 0:
             # See if the face is a match for the known face(s)
-            np.savetxt(self.name + 'encoding' + str(self.num_valid) + '.txt', self.face_encodings[0])
+            np.savetxt(self.name + '_encoding_' + str(self.num_valid) + '.txt', self.face_encodings[0])
             self.num_valid += 1
 
         self.rawCapture.truncate()
