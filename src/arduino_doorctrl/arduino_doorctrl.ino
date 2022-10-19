@@ -151,25 +151,24 @@ void loop() {
     display_screen("---Face ID---");
   }
   lastState = currentState;
-  delay(500);
+  delay(10);
 }
 
 void activate(){
   Serial.println(1);
   Serial.flush();
-  // delay(1000);
   while(Serial.available() == 0){
     display_screen("-Processing-");
   }
   valid_person = Serial.readString();
   Serial.flush();
-  if (valid_person.indexOf("-1") != -1){
+  if (valid_person.indexOf("-1") == -1){
      display_screen(valid_person);
      myservo.write(180);
      delay(5000);
      myservo.write(0);
   } else {
-    display_screen("Access Denied");
+    display_screen("Unauthorized");
     myservo.write(0);
   }
 }
