@@ -82,14 +82,14 @@ if __name__ == '__main__':
     with serial.Serial("/dev/ttyACM0", 9600, timeout=1) as arduino:
         time.sleep(0.1) #wait for serial to open
         if arduino.isOpen():
+            arduino.flush()
             print("{} connected!".format(arduino.port))
             try:
                 while True:
                     while arduino.inWaiting() == 0: pass
-                    arduino.flush()
+                    arduino.flushInput()
                     print("Activated")
                     output = validate.validate_person()
-                    arduino.flush()
                     arduino.write(output.encode())
 
             except KeyboardInterrupt:
