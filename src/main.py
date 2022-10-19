@@ -22,6 +22,8 @@ class Validator():
 
 
     def initialize_roomate_encodings(self):
+        self.known_face_names = []
+        self.known_face_encodings = []
         encodings_folders = [ f.path for f in os.scandir('refs/') if f.is_dir()]
         for folder in encodings_folders:
             name = folder[5:]
