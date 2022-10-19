@@ -137,13 +137,13 @@ void setup() {
 int xx=40;
 int yy=0;
 int tt=0;
-string total_images = "10";
+String total_images = "10";
 void loop() {
   Serial.flush();
   while(Serial.available() == 0){
     display_screen("-Processing-");
   }
-  num_images_captured = Serial.readString();
+  String num_images_captured = Serial.readString();
   Serial.flush();
   display_screen("--" + num_images_captured + "/" + total_images + "--");
 }
