@@ -22,17 +22,24 @@ class Validator():
 
 
     def initialize_roomate_encodings(self):
-        # aryan_image = cv2.rotate(face_recognition.load_image_file("refs/aryan.jpg"), cv2.ROTATE_180)
-        # aryan_face_encoding = face_recognition.face_encodings(aryan_image)[0]
-        aryan_face_encoding = np.loadtxt('refs/aryan_encoding.txt')
+        encodings_folders = [ f.path for f in os.scandir('refs/') if f.is_dir()]
+        for folder in encodings_folders:
+            name = folder[5:]
+            for file in os.listdir(folder):
+                self.known_face_names.append(name)
+                self.known_face_encodings.append(np.loadtxt(os.path.join(folder, file)))
+
+        # aryan_face_encoding = np.loadtxt('refs/aryan_encoding.txt')
 
         # Create arrays of known face encodings and their names
-        self.known_face_encodings = [
-            aryan_face_encoding
-        ]
-        self.known_face_names = [
-            "Aryan Naveen"
-        ]
+        # self.known_face_encodings = [
+        #     aryan_face_encoding
+        # ]
+        # self.known_face_names = [
+        #     "Aryan Naveen"
+        # ]
+
+        print(self.known_face_names)
 
 
 

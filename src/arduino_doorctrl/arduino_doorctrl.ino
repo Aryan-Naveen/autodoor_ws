@@ -163,7 +163,7 @@ void activate(){
   valid_person = Serial.readString();
   Serial.flush();
   if (valid_person.indexOf("-1") == -1){
-     display_screen(valid_person);
+     display_screen("ID: " + valid_person);
      myservo.write(180);
      delay(5000);
      myservo.write(0);
