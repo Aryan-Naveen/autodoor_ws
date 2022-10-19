@@ -3,7 +3,7 @@
 # lsusb to check device name
 #dmesg | grep "tty" to find port name
 
-import serial, time, cv2, face_recognition
+import serial, time, cv2, face_recognition, os
 from picamera import PiCamera
 from picamera.array import PiRGBArray
 import numpy as np
@@ -18,7 +18,8 @@ class ImageReferenceLoader():
         # Initialize some variables
         self.num_valid = 0
         self.num_req = 10
-        self.name = "aryan"
+        self.name = "Aryan"
+        os.mkdir(self.name)
 
 
     def capture_image(self):
@@ -35,7 +36,7 @@ class ImageReferenceLoader():
 
         if len(self.face_encodings) > 0:
             # See if the face is a match for the known face(s)
-            np.savetxt(self.name + '_refs/encoding_' + str(self.num_valid) + '.txt', self.face_encodings[0])
+            np.savetxt(self.name + '/encoding_' + str(self.num_valid) + '.txt', self.face_encodings[0])
             self.num_valid += 1
 
         self.rawCapture.truncate()
