@@ -29,9 +29,7 @@ if __name__ == '__main__':
         face_encodings = face_recognition.face_encodings(rgb_small_frame, face_locations)
         if len(face_encodings) > 0:
             print(face_encodings[0])
-            req_valid += 1
-
-            print(req_valid)
+            num_valid += 1
         else:
             print('invalid')
         rawCapture.truncate()
