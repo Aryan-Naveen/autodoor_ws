@@ -17,7 +17,7 @@ class ImageReferenceLoader():
 
         # Initialize some variables
         self.num_valid = 0
-        self.req_valid = 10
+        self.num_req = 10
         self.name = "Aryan"
 
 
@@ -53,7 +53,8 @@ if __name__ == '__main__':
             arduino.flush()
             print("{} connected!".format(arduino.port))
             try:
-                while True:
+                while irl.num_valid < irl.num_req:
+                    arduino.flush()
                     output = irl.capture_image()
                     arduino.write(output.encode())
                     time.sleep(0.1)
