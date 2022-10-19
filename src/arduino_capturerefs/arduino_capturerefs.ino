@@ -146,9 +146,9 @@ void loop() {
   }
   num_images_captured = Serial.readString();
   Serial.flush();
-  display_screen("--" + num_images_captured + "/" + total_images + "--");
+  display_screen("----" + num_images_captured + "/" + total_images + "----");
   if (num_images_captured == total_images){
-    display_screen("Completed");
+    display_screen("---Completed---");
   }
 }
 
