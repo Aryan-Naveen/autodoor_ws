@@ -32,3 +32,7 @@ if __name__ == '__main__':
             req_valid += 1
 
             print(req_valid)
+        else:
+            print('invalid')
+            self.rawCapture.truncate()
+            self.rawCapture.seek(0)
