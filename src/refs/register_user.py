@@ -57,7 +57,7 @@ if __name__ == '__main__':
                     arduino.flush()
                     output = irl.capture_image()
                     arduino.write(output.encode())
-                    time.sleep(0.1)
+                    time.sleep(0.5)
 
             except KeyboardInterrupt:
                 print("KeyboardInterrupt has been caught.")

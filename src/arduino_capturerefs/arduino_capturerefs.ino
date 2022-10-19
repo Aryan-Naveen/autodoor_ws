@@ -138,14 +138,18 @@ int xx=40;
 int yy=0;
 int tt=0;
 String total_images = "10";
+String num_images_captured = "-1";
 void loop() {
   Serial.flush();
-  while(Serial.available() == 0){
+  while(Serial.available() == 0 && num_images_captured == "-1"){
     display_screen("Not begun yet");
   }
-  String num_images_captured = Serial.readString();
+  num_images_captured = Serial.readString();
   Serial.flush();
   display_screen("--" + num_images_captured + "/" + total_images + "--");
+  if (num_images_captured == total_images){
+    display_screen("Completed");
+  }
 }
 
 void display_screen(String phrase){
