@@ -8,14 +8,15 @@ from picamera import PiCamera
 from picamera.array import PiRGBArray
 import numpy as np
 
+
 if __name__ == '__main__':
     name = "Aryan"
     num_valid = 0
-    req_valid = 1
+    req_valid = 10
     camera = PiCamera()
     rawCapture = PiRGBArray(camera)
     time.sleep(0.1)
-    print("starting")
+    print("Beginning image capture")
     while num_valid < req_valid:
         camera.capture(rawCapture, format="bgr")
         frame = cv2.rotate(rawCapture.array, cv2.ROTATE_180)
@@ -28,7 +29,7 @@ if __name__ == '__main__':
         face_locations = face_recognition.face_locations(rgb_small_frame, number_of_times_to_upsample = 2)
         face_encodings = face_recognition.face_encodings(rgb_small_frame, face_locations)
         if len(face_encodings) > 0:
-            print(face_encodings[0])
+            np.savetxt(name + 'encoding' + str(num_valid) + '.txt')
             num_valid += 1
         else:
             print('invalid')
