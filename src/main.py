@@ -87,6 +87,7 @@ if __name__ == '__main__':
             try:
                 while True:
                     while arduino.inWaiting() == 0: pass
+                    print(arduino.readline())
                     arduino.flushInput()
                     print("Activated")
                     output = validate.validate_person()
