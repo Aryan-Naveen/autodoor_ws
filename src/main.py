@@ -3,7 +3,7 @@
 # lsusb to check device name
 #dmesg | grep "tty" to find port name
 
-import serial, time, cv2, face_recognition
+import serial, time, cv2, face_recognition, os
 from picamera import PiCamera
 from picamera.array import PiRGBArray
 import numpy as np
