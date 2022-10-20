@@ -1,0 +1,3 @@
+tmux attach -t facereg
+
+Ctrl+b then d

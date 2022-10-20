@@ -18,7 +18,7 @@ class ImageReferenceLoader():
         # Initialize some variables
         self.num_valid = 0
         self.num_req = 10
-        self.name = "Aryan"
+        self.name = "Nalan"
         os.mkdir(self.name)
 
 
